@@ -96,8 +96,18 @@ def is_win_blocked(board: np.ndarray, player: BoardPiece, last_action: PlayerAct
     return False
 
 
-def is_result_better(best_score: float, best_num_moves: int, tmp_score: float, tmp_num_moves: int, player: BoardPiece) \
-        -> bool:
+def is_result_better(
+        best_score: float, best_num_moves: int, tmp_score: float, tmp_num_moves: int, player: BoardPiece
+) -> bool:
+    """ Return True if 'tmp_score' and/or 'tmp_num_moves' is better for 'player' than current best.
+
+    Keyword arguments:
+    best_score -- the current best score
+    best_num_moves -- the current best number of recursive calls at which 'best_score' was achieved
+    tmp_score -- the potential better score
+    tmp_num_moves -- the potential number of recursive calls at which 'tmp_score' was achieved
+    player -- the player who placed the last BoardPiece on the board
+    """
     if player == PLAYER1 and tmp_score > best_score:
         return True
     elif player == PLAYER2 and tmp_score < best_score:
