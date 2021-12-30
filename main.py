@@ -6,7 +6,7 @@ from typing import Optional, Callable
 
 import numpy as np
 
-from agents.agent_minimax import generate_minimax
+from agents.agent_minimax import generate_alpha_beta
 from agents.common import PLAYER1, PLAYER2, PLAYER1_PRINT, PLAYER2_PRINT, GameState
 from agents.common import PlayerAction, BoardPiece, SavedState, GenMove
 from agents.common import initialize_game_state, pretty_print_board, apply_player_action, check_end_state
@@ -81,7 +81,7 @@ if __name__ == "__main__":
     # human_vs_agent(generate_move)
 
     # play against a minimax agent
-    human_vs_agent(generate_minimax)
+    # human_vs_agent(generate_minimax)
 
     # play against a alpha_beta agent
-    # human_vs_agent(generate_alpha_beta)
+    human_vs_agent(generate_alpha_beta)
