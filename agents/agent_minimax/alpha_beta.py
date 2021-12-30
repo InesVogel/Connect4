@@ -14,7 +14,7 @@ def generate_move_minimax_alpha_beta_pruning(
     """ Choose a valid, non-full column using minimax algorithm with alpha beta pruning and return it as `action`.
 
     Keyword arguments:
-    board -- the current representation of the game
+    board -- the current state of the game
     player -- the player for whom the next PlayerAction is determined
     saved_state -- optional (not being used currently)
     """
@@ -34,7 +34,7 @@ def alpha_beta_pruning(
     """Return best score, best number of moves and best action for 'player'.
 
     Keyword arguments:
-    board -- the current representation of the game
+    board -- the current state of the game
     player -- the player for whom the best action is determined
     depth -- the number of recursive steps left of the minimax algorithm
     last_action -- the last column chosen on 'board' where a BoardPiece was placed
@@ -91,7 +91,7 @@ def terminate_minimax(
     """Determine termination option of minimax algorithm.
 
     Keyword arguments:
-    board -- the current representation of the game
+    board -- the current state of the game
     player -- the player for whom the termination option is determined
     depth -- the number of recursive steps left of the minimax algorithm
     last_action -- the last column chosen on 'board' where a BoardPiece was placed

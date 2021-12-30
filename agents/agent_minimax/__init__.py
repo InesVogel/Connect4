@@ -1,4 +1,2 @@
 from .alpha_beta import generate_move_minimax_alpha_beta_pruning as generate_alpha_beta
-from .common import score_heuristic, valid_actions, determine_score, has_higher_value, valid_action, is_win_blocked, \
-    player_blocks_otherPlayer, new_score_heuristic
-from .minimax import generate_move_alpha_beta as generate_minimax
+from .common import valid_action, is_win_blocked, is_player_blocking_opponent, new_score_heuristic
