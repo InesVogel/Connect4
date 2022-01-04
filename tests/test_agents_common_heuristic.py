@@ -1,5 +1,4 @@
-from agents.agent_minimax import heuristic
-from agents.common import PLAYER1, PLAYER2, initialize_game_state, apply_player_action, string_to_board
+from agents.common import PLAYER1, PLAYER2, initialize_game_state, apply_player_action, string_to_board, heuristic
 
 
 def test_heuristic_columnWithZeroOccupiedFields_expectScoreZero():

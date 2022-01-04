@@ -1,7 +1,6 @@
 import numpy as np
 
-from agents.agent_minimax import is_valid_action
-from agents.common import PLAYER1, PLAYER2, NO_PLAYER, initialize_game_state
+from agents.common import PLAYER1, PLAYER2, NO_PLAYER, initialize_game_state, is_valid_action
 
 
 def test_valid_action_allValid():

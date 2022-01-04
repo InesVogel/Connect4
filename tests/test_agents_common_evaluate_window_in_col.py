@@ -1,5 +1,5 @@
-from agents.agent_minimax import evaluate_window_in_col, is_player_blocking_opponent
-from agents.common import PLAYER1, PLAYER2, initialize_game_state, apply_player_action
+from agents.common import PLAYER1, PLAYER2, initialize_game_state, apply_player_action, \
+    evaluate_window_in_col, is_player_blocking_opponent
 
 
 def test_evaluate_window_in_col_lastRowSmalerThanThree_allColumns_False():

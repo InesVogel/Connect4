@@ -1,5 +1,4 @@
-from agents.agent_minimax import determine_num_windows_for_antidiagonal
-from agents.common import initialize_game_state
+from agents.common import initialize_game_state, determine_num_windows_for_antidiagonal
 
 num_windows_dict_rowLastRow = {
     0: 3,

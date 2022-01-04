@@ -1,7 +1,6 @@
 import numpy as np
 
-from agents.agent_minimax import is_player_blocking_opponent
-from agents.common import PLAYER1, PLAYER2, NO_PLAYER
+from agents.common import PLAYER1, PLAYER2, NO_PLAYER, is_player_blocking_opponent
 
 
 def test_is_player_blocking_opponent_2blocks1():

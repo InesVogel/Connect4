@@ -1,5 +1,5 @@
-from agents.agent_minimax import evaluate_windows_in_row, is_player_blocking_opponent
-from agents.common import PLAYER1, PLAYER2, initialize_game_state, apply_player_action
+from agents.common import PLAYER1, PLAYER2, initialize_game_state, apply_player_action, \
+    evaluate_windows_in_row, is_player_blocking_opponent
 
 
 def test_evaluate_windows_in_row0_True_window0123():

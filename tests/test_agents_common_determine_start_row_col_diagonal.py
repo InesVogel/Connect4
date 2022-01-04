@@ -1,5 +1,4 @@
-from agents.agent_minimax import determine_start_row_col_for_diagonal
-from agents.common import initialize_game_state
+from agents.common import initialize_game_state, determine_start_row_col_for_diagonal
 
 
 def test_determine_start_rowZero_col_for_diagonal():

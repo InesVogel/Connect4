@@ -1,5 +1,4 @@
-from agents.agent_minimax import determine_row
-from agents.common import PLAYER1, initialize_game_state, apply_player_action
+from agents.common import PLAYER1, initialize_game_state, apply_player_action, determine_row
 
 
 def test_determine_row_expect0():

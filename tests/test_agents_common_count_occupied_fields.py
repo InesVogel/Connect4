@@ -1,7 +1,6 @@
 import numpy as np
 
-from agents.agent_minimax import count_occupied_fields, WindowSize
-from agents.common import PLAYER1, PLAYER2, NO_PLAYER
+from agents.common import PLAYER1, PLAYER2, NO_PLAYER, count_occupied_fields, WindowSize
 
 
 def test_count_occupied_fields_PLAYER1_expectCount1():

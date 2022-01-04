@@ -1,7 +1,6 @@
 import numpy as np
 
-from agents.agent_minimax import determine_score
-from agents.common import PLAYER1, PLAYER2, NO_PLAYER
+from agents.common import PLAYER1, PLAYER2, NO_PLAYER, determine_score
 
 
 def test_determine_score_2occupied_singlePlayer_PLAYER1():

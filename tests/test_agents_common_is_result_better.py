@@ -1,8 +1,6 @@
 import math
 
-from agents.agent_minimax import is_result_better
-from agents.agent_minimax.common import DEPTH
-from agents.common import PLAYER1, PLAYER2
+from agents.common import PLAYER1, PLAYER2, DEPTH, is_result_better
 
 
 def test_is_result_better_PLAYER1_true():

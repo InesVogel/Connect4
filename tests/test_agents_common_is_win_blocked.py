@@ -1,5 +1,4 @@
-from agents.agent_minimax import is_win_blocked
-from agents.common import PLAYER1, PLAYER2, string_to_board
+from agents.common import PLAYER1, PLAYER2, string_to_board, is_win_blocked
 
 
 def test_is_win_blocked_diagonal():

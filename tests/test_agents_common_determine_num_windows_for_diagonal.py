@@ -1,5 +1,4 @@
-from agents.agent_minimax import determine_num_windows_for_diagonal
-from agents.common import initialize_game_state
+from agents.common import initialize_game_state, determine_num_windows_for_diagonal
 
 num_windows_dict_rowZero = {
     0: 3,

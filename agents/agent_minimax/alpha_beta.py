@@ -4,8 +4,7 @@ from typing import Optional, Tuple
 import numpy as np
 
 from agents.common import PlayerAction, BoardPiece, apply_player_action, check_end_state, SavedState, GameState, \
-    PLAYER2, PLAYER1
-from .common import is_valid_action, is_win_blocked, is_result_better, heuristic, DEPTH
+    PLAYER2, PLAYER1, is_valid_action, is_win_blocked, is_result_better, heuristic, DEPTH
 
 
 def generate_move_minimax_alpha_beta_pruning(
