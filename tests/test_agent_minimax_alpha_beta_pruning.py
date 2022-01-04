@@ -198,19 +198,39 @@ def test_minimax_anyMoveButColumn4():
     assert best_action in {0, 1, 2, 3, 5, 6}
     assert best_action != 4
 
-# def test_minimax_anyMoveButColumn3():
-#     game_string = "|==============|" \
-#                   "|              |" \
-#                   "|              |" \
-#                   "|              |" \
-#                   "|              |" \
-#                   "|      O       |" \
-#                   "|      X X O   |" \
-#                   "|==============|" \
-#                   "|0 1 2 3 4 5 6 |"
-#     board = string_to_board(game_string)
-#
-#     best_action, saved_state = generate_alpha_beta(board, PLAYER1)
-#
-#     assert best_action in {0, 1, 2, 4, 5, 6}
-#     assert best_action != 3
+
+def test_minimax_win_bothPlayers():
+    game_string = "|==============|" \
+                  "|              |" \
+                  "|              |" \
+                  "|              |" \
+                  "|      O X     |" \
+                  "|    O X X     |" \
+                  "|  O X X X O O |" \
+                  "|==============|" \
+                  "|0 1 2 3 4 5 6 |"
+    board = string_to_board(game_string)
+
+    best_action, saved_state = generate_alpha_beta(board, PLAYER1)
+    assert best_action == 4
+
+    best_action, saved_state = generate_alpha_beta(board, PLAYER2)
+    assert best_action == 4
+
+
+def test_minimax_anyMoveButColumn3():
+    game_string = "|==============|" \
+                  "|              |" \
+                  "|              |" \
+                  "|              |" \
+                  "|              |" \
+                  "|      O       |" \
+                  "|      X X O   |" \
+                  "|==============|" \
+                  "|0 1 2 3 4 5 6 |"
+    board = string_to_board(game_string)
+
+    best_action, saved_state = generate_alpha_beta(board, PLAYER1)
+
+    assert best_action in {0, 1, 2, 4, 5, 6}
+    assert best_action != 3

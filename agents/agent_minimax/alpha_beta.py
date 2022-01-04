@@ -5,7 +5,7 @@ import numpy as np
 
 from agents.common import PlayerAction, BoardPiece, apply_player_action, check_end_state, SavedState, GameState, \
     PLAYER2, PLAYER1
-from .common import valid_action, is_win_blocked, is_result_better, new_score_heuristic, DEPTH
+from .common import is_valid_action, is_win_blocked, is_result_better, heuristic, DEPTH
 
 
 def generate_move_minimax_alpha_beta_pruning(
@@ -60,7 +60,7 @@ def alpha_beta_pruning(
 
     """ Play each possible valid action. """
     for action in actions:
-        if valid_action(board, action):
+        if is_valid_action(board, action):
             # TODO: instead of copying board introduce do and undo move/action
             copy_board = apply_player_action(board, action, player, True)
             next_player = PLAYER2 if player == PLAYER1 else PLAYER1
@@ -77,6 +77,10 @@ def alpha_beta_pruning(
                     alpha = max(alpha, best_score)
                 elif player == PLAYER2:
                     beta = min(beta, best_score)
+
+            # # Debugging purposes
+            # if depth == DEPTH:
+            #     print("Col {} - score: {} - current_best_score: {}".format(action, tmp_score, best_score))
 
             """ Determine alpha or beta cutoff. """
             if is_alpha_beta_cutoff(player, alpha, beta):
@@ -113,7 +117,7 @@ def terminate_minimax(
         return tmp, tmp_num_moves
 
     if depth == 0:  # Recursion depth exhausted
-        tmp = new_score_heuristic(board, previous_player, player)
+        tmp = heuristic(board)
         return tmp, tmp_num_moves
 
     return -1, tmp_num_moves

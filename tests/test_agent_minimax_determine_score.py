@@ -5,222 +5,101 @@ from agents.common import PLAYER1, PLAYER2, NO_PLAYER
 
 
 def test_determine_score_2occupied_singlePlayer_PLAYER1():
-    window = np.array([PLAYER1, NO_PLAYER, PLAYER1, NO_PLAYER])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    assert score_Player1 == 100
-    assert score_Player2 == 0
+    window1 = np.array([PLAYER1, NO_PLAYER, PLAYER1, NO_PLAYER])
+    window2 = np.array([NO_PLAYER, PLAYER1, NO_PLAYER, PLAYER1])
+    window3 = np.array([PLAYER1, NO_PLAYER, NO_PLAYER, PLAYER1])
+    window4 = np.array([NO_PLAYER, PLAYER1, PLAYER1, NO_PLAYER])
+    window5 = np.array([NO_PLAYER, NO_PLAYER, PLAYER1, PLAYER1])
+    window6 = np.array([PLAYER1, PLAYER1, NO_PLAYER, NO_PLAYER])
 
-    window = np.array([NO_PLAYER, PLAYER1, NO_PLAYER, PLAYER1])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    assert score_Player1 == 100
-    assert score_Player2 == 0
+    windows = [window1, window2, window3, window4, window5, window6]
 
-    window = np.array([PLAYER1, NO_PLAYER, NO_PLAYER, PLAYER1])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    assert score_Player1 == 100
-    assert score_Player2 == 0
-
-    window = np.array([NO_PLAYER, PLAYER1, PLAYER1, NO_PLAYER])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    assert score_Player1 == 100
-    assert score_Player2 == 0
-
-    window = np.array([NO_PLAYER, NO_PLAYER, PLAYER1, PLAYER1])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    assert score_Player1 == 100
-    assert score_Player2 == 0
-
-    window = np.array([PLAYER1, PLAYER1, NO_PLAYER, NO_PLAYER])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    assert score_Player1 == 100
-    assert score_Player2 == 0
+    for window in windows:
+        assert determine_score(window, 4) == 100
 
 
 def test_determine_score_2occupied_singlePlayer_PLAYER2():
-    window = np.array([PLAYER2, NO_PLAYER, PLAYER2, NO_PLAYER])
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    assert score_Player2 == -100
-    assert score_Player1 == 0
+    window1 = np.array([PLAYER2, NO_PLAYER, PLAYER2, NO_PLAYER])
+    window2 = np.array([NO_PLAYER, PLAYER2, NO_PLAYER, PLAYER2])
+    window3 = np.array([PLAYER2, NO_PLAYER, NO_PLAYER, PLAYER2])
+    window4 = np.array([NO_PLAYER, PLAYER2, PLAYER2, NO_PLAYER])
+    window5 = np.array([NO_PLAYER, NO_PLAYER, PLAYER2, PLAYER2])
+    window6 = np.array([PLAYER2, PLAYER2, NO_PLAYER, NO_PLAYER])
 
-    window = np.array([NO_PLAYER, PLAYER2, NO_PLAYER, PLAYER2])
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    assert score_Player2 == -100
-    assert score_Player1 == 0
+    windows = [window1, window2, window3, window4, window5, window6]
 
-    window = np.array([PLAYER2, NO_PLAYER, NO_PLAYER, PLAYER2])
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    assert score_Player2 == -100
-    assert score_Player1 == 0
-
-    window = np.array([NO_PLAYER, PLAYER2, PLAYER2, NO_PLAYER])
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    assert score_Player2 == -100
-    assert score_Player1 == 0
-
-    window = np.array([NO_PLAYER, NO_PLAYER, PLAYER2, PLAYER2])
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    assert score_Player2 == -100
-    assert score_Player1 == 0
-
-    window = np.array([PLAYER2, PLAYER2, NO_PLAYER, NO_PLAYER])
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    assert score_Player2 == -100
-    assert score_Player1 == 0
+    for window in windows:
+        assert determine_score(window, 4) == -100
 
 
 def test_determine_score_3occupied_singlePlayer_PLAYER1():
-    window = np.array([PLAYER1, NO_PLAYER, PLAYER1, PLAYER1])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    assert score_Player1 == 1000
-    assert score_Player2 == 10000
+    window1 = np.array([PLAYER1, NO_PLAYER, PLAYER1, PLAYER1])
+    window2 = np.array([NO_PLAYER, PLAYER1, PLAYER1, PLAYER1])
+    window3 = np.array([PLAYER1, PLAYER1, NO_PLAYER, PLAYER1])
+    window4 = np.array([PLAYER1, PLAYER1, PLAYER1, NO_PLAYER])
 
-    window = np.array([NO_PLAYER, PLAYER1, PLAYER1, PLAYER1])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    assert score_Player1 == 1000
-    assert score_Player2 == 10000
+    windows = [window1, window2, window3, window4]
 
-    window = np.array([PLAYER1, PLAYER1, NO_PLAYER, PLAYER1])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    assert score_Player1 == 1000
-    assert score_Player2 == 10000
-
-    window = np.array([PLAYER1, PLAYER1, PLAYER1, NO_PLAYER])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    assert score_Player1 == 1000
-    assert score_Player2 == 10000
+    for window in windows:
+        assert determine_score(window, 4) == 1000
 
 
 def test_determine_score_3occupied_singlePlayer_PLAYER2():
-    window = np.array([PLAYER2, NO_PLAYER, PLAYER2, PLAYER2])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    assert score_Player1 == -10000
-    assert score_Player2 == -1000
+    window1 = np.array([PLAYER2, NO_PLAYER, PLAYER2, PLAYER2])
+    window2 = np.array([NO_PLAYER, PLAYER2, PLAYER2, PLAYER2])
+    window3 = np.array([PLAYER2, PLAYER2, NO_PLAYER, PLAYER2])
+    window4 = np.array([PLAYER2, PLAYER2, PLAYER2, NO_PLAYER])
 
-    window = np.array([NO_PLAYER, PLAYER2, PLAYER2, PLAYER2])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    assert score_Player1 == -10000
-    assert score_Player2 == -1000
+    windows = [window1, window2, window3, window4]
 
-    window = np.array([PLAYER2, PLAYER2, NO_PLAYER, PLAYER2])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    assert score_Player1 == -10000
-    assert score_Player2 == -1000
-
-    window = np.array([PLAYER2, PLAYER2, PLAYER2, NO_PLAYER])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    assert score_Player1 == -10000
-    assert score_Player2 == -1000
+    for window in windows:
+        assert determine_score(window, 4) == -1000
 
 
 def test_determine_score_4occupied_singlePlayer_PLAYER1():
     window = np.array([PLAYER1, PLAYER1, PLAYER1, PLAYER1])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-
-    assert score_Player1 == 10000
-    assert score_Player2 == 0
+    assert determine_score(window, 4) == 10000
 
 
 def test_determine_score_4occupied_singlePlayer_PLAYER2():
     window = np.array([PLAYER2, PLAYER2, PLAYER2, PLAYER2])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-
-    assert score_Player1 == 0
-    assert score_Player2 == -10000
+    assert determine_score(window, 4) == -10000
 
 
 def test_determine_score_4occupied_multiplePlayer():
     window = np.array([PLAYER1, PLAYER2, PLAYER1, PLAYER1])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    assert score_Player1 == 0
-    assert score_Player2 == 0
+    assert determine_score(window, 4) == 0
 
 
 def test_determine_score_3occupied_multiplePlayer():
     window = np.array([PLAYER1, PLAYER1, PLAYER2, NO_PLAYER])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    assert score_Player1 == 0
-    assert score_Player2 == 0
+    assert determine_score(window, 4) == 0
 
 
 def test_determine_score_2occupied_multiplePlayer():
     window = np.array([NO_PLAYER, PLAYER1, PLAYER2, NO_PLAYER])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    assert score_Player1 == 0
-    assert score_Player2 == 0
+    assert determine_score(window, 4) == 0
 
 
 def test_determine_score_1occupied_singlePlayer_PLAYER1():
-    window = np.array([PLAYER1, NO_PLAYER, NO_PLAYER, NO_PLAYER])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    assert score_Player1 == 0
-    assert score_Player2 == 0
+    window1 = np.array([PLAYER1, NO_PLAYER, NO_PLAYER, NO_PLAYER])
+    window2 = np.array([NO_PLAYER, PLAYER1, NO_PLAYER, NO_PLAYER])
+    window3 = np.array([NO_PLAYER, NO_PLAYER, PLAYER1, NO_PLAYER])
+    window4 = np.array([NO_PLAYER, NO_PLAYER, NO_PLAYER, PLAYER1])
 
-    window = np.array([NO_PLAYER, PLAYER1, NO_PLAYER, NO_PLAYER])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    assert score_Player1 == 0
-    assert score_Player2 == 0
+    windows = [window1, window2, window3, window4]
 
-    window = np.array([NO_PLAYER, NO_PLAYER, PLAYER1, NO_PLAYER])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    assert score_Player1 == 0
-    assert score_Player2 == 0
-
-    window = np.array([NO_PLAYER, NO_PLAYER, NO_PLAYER, PLAYER1])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    assert score_Player1 == 0
-    assert score_Player2 == 0
+    for window in windows:
+        assert determine_score(window, 4) == 0
 
 
 def test_determine_score_1occupied_singlePlayer_PLAYER2():
-    window = np.array([PLAYER2, NO_PLAYER, NO_PLAYER, NO_PLAYER])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    assert score_Player1 == 0
-    assert score_Player2 == 0
+    window1 = np.array([PLAYER2, NO_PLAYER, NO_PLAYER, NO_PLAYER])
+    window2 = np.array([NO_PLAYER, PLAYER2, NO_PLAYER, NO_PLAYER])
+    window3 = np.array([NO_PLAYER, NO_PLAYER, PLAYER2, NO_PLAYER])
+    window4 = np.array([NO_PLAYER, NO_PLAYER, NO_PLAYER, PLAYER2])
 
-    window = np.array([NO_PLAYER, PLAYER2, NO_PLAYER, NO_PLAYER])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    assert score_Player1 == 0
-    assert score_Player2 == 0
+    windows = [window1, window2, window3, window4]
 
-    window = np.array([NO_PLAYER, NO_PLAYER, PLAYER2, NO_PLAYER])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    assert score_Player1 == 0
-    assert score_Player2 == 0
-
-    window = np.array([NO_PLAYER, NO_PLAYER, NO_PLAYER, PLAYER2])
-    score_Player1 = determine_score(window, 4, PLAYER1, PLAYER2)
-    score_Player2 = determine_score(window, 4, PLAYER2, PLAYER1)
-    assert score_Player1 == 0
-    assert score_Player2 == 0
+    for window in windows:
+        assert determine_score(window, 4) == 0

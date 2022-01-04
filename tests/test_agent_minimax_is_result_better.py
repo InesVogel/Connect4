@@ -53,6 +53,7 @@ def test_is_result_better_scoresEqual_numMovesEqual_false():
     assert is_result_better(best_score, best_num_moves, tmp_score, tmp_num_moves, PLAYER2) == False
 
 
+# TODO: figure out if needed
 def test_is_result_better_scoresEqual_numMovesLower_true():
     best_score = 1000
     best_num_moves = 4

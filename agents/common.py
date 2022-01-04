@@ -22,6 +22,9 @@ reverse_board_dict = {NO_PLAYER_PRINT: NO_PLAYER,
                       PLAYER1_PRINT: PLAYER1,
                       PLAYER2_PRINT: PLAYER2}
 
+dict_next_player = {PLAYER1: PLAYER2,
+                    PLAYER2: PLAYER1}
+
 PlayerAction = np.int8  # The column to be played
 
 
@@ -240,3 +243,11 @@ def check_end_state(
         return GameState.IS_WIN
     else:
         return GameState.IS_DRAW if np.count_nonzero(board[-1]) == len(board[0]) else GameState.STILL_PLAYING
+
+
+def next_player(player: BoardPiece) -> BoardPiece:
+    """" Return player, who will put the next BoardPiece on the board. """
+
+    next = dict_next_player.get(player)
+
+    return NO_PLAYER if next is None else next
