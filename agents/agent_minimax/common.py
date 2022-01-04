@@ -20,6 +20,7 @@ heuristic_column_index = {
 
 def is_valid_action(board: np.ndarray, action: int) -> bool:
     """" Return True if last row in column 'action' is empty. """
+
     tmp = range(0, board.__len__() + 1)
     if action in tmp:
         return board[-1][action] == NO_PLAYER
@@ -37,6 +38,7 @@ def is_player_blocking_opponent(window: np.ndarray, player: BoardPiece) -> bool:
     window -- the representation of connected fields on the board (horizontal, vertical or diagonal)
     player -- the player who placed the last BoardPiece on the board
     """
+
     window_size = window.__len__()
 
     if count_occupied_fields(window, next_player(player)) == window_size - 1 and \
@@ -95,7 +97,7 @@ def determine_num_windows_for_diagonal(board: np.ndarray, start_col: PlayerActio
 
     if start_col <= 1 and num_rows - WindowSize >= start_row:
         return num_rows - start_row - WindowSize + 1
-    elif start_col > 1 and start_row == 0 and start_col < WindowSize:
+    elif 1 < start_col < WindowSize and start_row == 0:
         return num_cols - start_col - WindowSize + 1
     else:
         return 0
@@ -131,7 +133,7 @@ def determine_num_windows_for_antidiagonal(board: np.ndarray, start_col: PlayerA
 
     if start_col == 0 and start_row > 2:
         return (start_row + 1) % WindowSize + 1
-    elif start_col >= 1 and start_col < WindowSize:
+    elif 0 < start_col < WindowSize:
         return (num_cols - start_col) % WindowSize + 1
     else:
         return 0
@@ -193,7 +195,7 @@ def evaluate_windows_in_diagonal(
     eval_function -- the function that should be evaluated for chosen window
     """
 
-    if last_action >= 0 and last_action < 7:
+    if 0 <= last_action < 7:
         row, col = determine_start_row_col_for_diagonal(last_action, last_row)
 
         range_end = determine_num_windows_for_diagonal(board, col, row)
@@ -225,7 +227,7 @@ def evaluate_windows_in_antidiagonal(
     eval_function -- the function that should be evaluated for chosen window
     """
 
-    if last_action >= 0 and last_action < 7:
+    if 0 <= last_action < 7:
         row, col = determine_start_row_col_for_antidiagonal(board, last_action, last_row)
 
         range_end = determine_num_windows_for_antidiagonal(board, col, row)
