@@ -1,5 +1,4 @@
-from agents.common import PLAYER1, PLAYER2, initialize_game_state, apply_player_action, \
-    connected_four
+from agents.common import PLAYER1, PLAYER2, initialize_game_state, apply_player_action, connected_four
 
 
 # # Test Template for Value Errors

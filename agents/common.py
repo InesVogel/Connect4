@@ -137,7 +137,7 @@ def valid_player(player: BoardPiece) -> bool:
     return True if player in board_dict else False
 
 
-# TODO: should happen if action is not valid? (e.g. action out of bounds or column is full)
+# TODO: what should happen if action is not valid? (e.g. action out of bounds or column is full)
 def apply_player_action(
         board: np.ndarray, action: PlayerAction, player: BoardPiece, copy: bool = False
 ) -> np.ndarray:
@@ -283,8 +283,6 @@ def evaluate_antidiagonals(board: np.ndarray, player, eval_function) -> bool:
     return False
 
 
-# TODO: implement last_action
-# TODO: optimize implementation
 def connected_four(
         board: np.ndarray, player: BoardPiece, last_action: Optional[PlayerAction] = None,
 ) -> bool:
